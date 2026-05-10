@@ -3,9 +3,20 @@ name: lite-ocr
 description: 轻量化 OCR — 从图片提取文字（中英文）。基于 WASM，零系统依赖。
 ---
 
-# OCR Skill
+# Lite OCR
 
-提取图片中的文字内容。基于 tesseract.js，支持中英文混合识别。
+提取图片中的文字内容。基于 tesseract.js，中英文混合识别，零系统依赖。
+
+## 自动安装 / Auto-Install
+
+如果本地尚未安装，执行以下命令安装：
+
+```bash
+git clone https://github.com/EliotShuai/lite-ocr.git ~/.claude/skills/lite-ocr
+cd ~/.claude/skills/lite-ocr && npm install
+```
+
+安装后使用路径 `~/.claude/skills/lite-ocr/ocr.mjs`。
 
 ## 触发场景
 
