@@ -31,8 +31,8 @@
 ### 作为 Claude Code skill
 
 ```bash
-cp -r . ~/.claude/skills/ocr/
-cd ~/.claude/skills/ocr && npm install
+git clone https://github.com/EliotShuai/lite-ocr.git ~/.claude/skills/lite-ocr
+cd ~/.claude/skills/lite-ocr && npm install
 ```
 
 ### 作为独立命令行工具 / Standalone CLI
