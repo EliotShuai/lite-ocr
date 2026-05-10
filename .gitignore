@@ -1,0 +1,3 @@
+node_modules/
+ocr-cache/
+*.traineddata

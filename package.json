@@ -1,0 +1,31 @@
+{
+  "name": "lite-ocr",
+  "version": "1.0.0",
+  "description": "轻量化 OCR 组件 — 零系统依赖，npm install 即用。基于 tesseract.js WASM，无需安装 Tesseract。",
+  "type": "module",
+  "main": "ocr.mjs",
+  "bin": {
+    "lite-ocr": "./ocr.mjs"
+  },
+  "scripts": {
+    "ocr": "node ocr.mjs"
+  },
+  "keywords": [
+    "claude-code",
+    "claude-skill",
+    "ocr",
+    "tesseract",
+    "image-to-text",
+    "chinese-ocr",
+    "wasm"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EliotShuai/lite-ocr.git"
+  },
+  "dependencies": {
+    "tesseract.js": "^5.1.1"
+  }
+}
