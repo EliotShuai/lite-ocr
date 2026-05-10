@@ -28,7 +28,19 @@
 
 ## 安装 / Install
 
-### 作为 Claude Code skill
+### 方式一：npx skills 一键安装（推荐）
+
+```bash
+npx skills add EliotShuai/lite-ocr
+```
+
+*`skills` CLI is an open-source Agent Skill package manager that auto-detects your agent environment.*
+
+### 方式二：让 Agent 自动安装
+
+> 帮我安装这个 skill：https://github.com/EliotShuai/lite-ocr
+
+### 方式三：手动安装
 
 ```bash
 git clone https://github.com/EliotShuai/lite-ocr.git ~/.claude/skills/lite-ocr
