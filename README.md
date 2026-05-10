@@ -56,23 +56,36 @@ node ocr.mjs <image.png>
 
 ## 使用 / Usage
 
+三种输出模式：
+
 ```bash
-# 中英混合识别 / Chinese + English (default)
+# 纯文本（默认，token 消耗最低）
 node ocr.mjs screenshot.png
 
-# 仅英文 / English only
-node ocr.mjs document.jpg --lang eng
+# 语义布局 — 启发式聚合后转译为标签结构（推荐 Agent 使用）
+node ocr.mjs screenshot.png --layout
 
-# 保存到文件 / Save to file
-node ocr.mjs photo.webp --output result.txt
-
-# 繁体中文 / Traditional Chinese
-node ocr.mjs image.png --lang chi_tra+eng
+# 结构化 JSON — 含单词坐标/置信度（程序化后处理用）
+node ocr.mjs screenshot.png --json
 ```
 
-首次运行会自动下载语言包（中文 ~15MB，英文 ~5MB），缓存后秒开。
+### 模式对比 / Mode Comparison
 
-*First run downloads language packs (~15MB Chinese, ~5MB English). Cached for instant reuse.*
+| Mode | Token | 适用 / Best for |
+|------|:--:|------|
+| 纯文本 (default) | 低 | 提取文字内容 / Text extraction |
+| `--layout` | 中 | 理解页面结构，Agent 友好 / Page structure for agents |
+| `--json` | 高 | 程序化后处理 / Programmatic post-processing |
+
+`--layout` 自动完成启发式聚合（单字→行→块）和语义化转译（`[HEADER]` `[TEXT]` `[CODE]` `[SIDEBAR]`），剥离原始像素坐标。
+
+### 语言选项 / Language Options
+
+```bash
+node ocr.mjs image.png --lang eng           # English only
+node ocr.mjs image.png --lang chi_tra+eng   # Traditional Chinese
+node ocr.mjs image.png --output result.txt  # Save to file
+```
 
 ## 支持的语言 / Languages
 
@@ -104,6 +117,14 @@ ocr.mjs image.webp
 无 API 调用，无系统依赖，全部本地运算。
 
 *No API calls. No system dependencies. Everything local.*
+
+## 局限 / Limitations
+
+**OCR ≠ 视觉模型。** 以下场景 lite-ocr 无法胜任：
+
+- 识别按钮颜色/形状、UI 组件样式 → 需多模态视觉模型
+- 定位 IDE 报错红色波浪线等视觉锚点 → OCR 只能读文字，看不到颜色标记
+- 理解图表/数据可视化的数值关系 → 需视觉推理能力
 
 ## License
 
