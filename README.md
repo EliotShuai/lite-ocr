@@ -10,6 +10,22 @@
 
 *Existing OCR skills require system Tesseract, Python, or cloud API keys. This runs Tesseract as WASM inside a sandbox — `npm install` is all you need.*
 
+## 同类对比 / Comparison
+
+| | Lite OCR | Image OCR Toolkit | Document Processor | LlamaFarm OCR |
+|:--|:--:|:--:|:--:|:--:|
+| 安装方式 | `npm install` | 系统安装 Tesseract | 系统安装 Tesseract | Python + 多个模型 |
+| 首次使用 | 自动下载语言包 | 配置环境变量 | 配置路径 | 下载模型权重 |
+| 依赖 | 0（WASM 沙箱） | Tesseract 二进制 | Tesseract + Poppler | PaddleOCR/Surya/EasyOCR |
+| 体积 | ~30MB（含语言包） | ~100MB+ | ~200MB+ | ~2GB+ |
+| 离线可用 | ✅ | ✅ | ✅ | ✅ |
+| API Key | 不需要 | 不需要 | 不需要 | 不需要 |
+| 多语言 | ✅ 100+ | ✅ | ✅ | ✅ |
+| 中英文 | ✅ 默认 | ✅ | ✅ | ✅ |
+| 适用场景 | 单张图片快速提取 | 批量图片处理 | 大文件 PDF/DOCX | 高精度 + 复杂排版 |
+
+*对比数据来源于各项目 README，截至 2026-05。*
+
 ## 安装 / Install
 
 ### 作为 Claude Code skill
