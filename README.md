@@ -1,5 +1,7 @@
 # Lite OCR / 轻量化 OCR
 
+[![Version](https://img.shields.io/badge/version-1.1.0-blue)](CHANGELOG.md)
+
 轻量化 OCR 组件 — 零系统依赖，npm install 即用，**无需安装 Tesseract**。
 
 *Zero-dependency OCR — no system Tesseract required. Runs entirely in WASM.*
@@ -125,6 +127,15 @@ ocr.mjs image.webp
 - 识别按钮颜色/形状、UI 组件样式 → 需多模态视觉模型
 - 定位 IDE 报错红色波浪线等视觉锚点 → OCR 只能读文字，看不到颜色标记
 - 理解图表/数据可视化的数值关系 → 需视觉推理能力
+
+## 版本 / Versions
+
+| 版本 | 日期 | 内容 |
+|------|------|------|
+| [v1.1.0](https://github.com/EliotShuai/lite-ocr/releases/tag/v1.1.0) | 2026-05-10 | 新增 `--layout` / `--json` 模式，启发式聚合与语义化转译 |
+| [v1.0.0](https://github.com/EliotShuai/lite-ocr/releases/tag/v1.0.0) | 2026-05-10 | 初始发布，纯文本 OCR，零系统依赖 |
+
+详见 [CHANGELOG.md](CHANGELOG.md)。
 
 ## License
 
